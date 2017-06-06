@@ -134,3 +134,11 @@ genesis_register_sidebar( array(
 	'name'        => __( 'Home Bottom', 'agency' ),
 	'description' => __( 'This is the bottom section of the homepage.', 'agency' ),
 ) );
+
+
+//* Change the footer text
+add_filter('genesis_footer_creds_text', 'sp_footer_creds_filter');
+function sp_footer_creds_filter( $creds ) {
+	$creds = '[footer_copyright] &middot; <a href="http://victorieslaw.com/about/">About</a> &middot; Designed % Built By <a href="https://amethyst.design/" title="Genesis Framework">Amethyst Design</a>';
+	return $creds;
+}
